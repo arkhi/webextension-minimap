@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Minimap",
+  "version": "1.0",
+
+  "description": "Show a minimap of the current document headers",
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "icons": {
+    "48": "icons/minimap.svg",
+    "96": "icons/minimap.svg"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/minimap.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["minimap.js"],
+      "css": ["minimap.css"]
+    }
+  ],
+
+  "background": {
+      "scripts": ["background.js"]
+  }
+}
